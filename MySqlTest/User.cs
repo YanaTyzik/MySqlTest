@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace MySqlTest
 {
-    class User
+       public class User
     {
-        public string ID
-
+        public string ID { get; set; }
         public string Name {  get; set; }
-
         public string Surname { get; set; }
-        
+        public string Login { get; set; }
         public string Telephone { get; set; }
         public DateTime DateBirth { get; set; }
+
+        public User (string ID)
+        {
+            ID = Id;
+        }
     }
 }

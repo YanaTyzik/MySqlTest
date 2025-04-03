@@ -12,6 +12,7 @@ namespace MySqlTest
 {
     public partial class Form1: Form
     {
+        MySQLUsersReader sqlreader = new MySQLUsersReader();
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace MySqlTest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            UserTable.DataSource = sqlreader.ReadUsers();
         }
     }
 }
