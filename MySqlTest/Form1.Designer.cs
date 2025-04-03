@@ -52,6 +52,7 @@ namespace MySqlTest
             this.DeleteUser.TabIndex = 1;
             this.DeleteUser.Text = "Удалит";
             this.DeleteUser.UseVisualStyleBackColor = true;
+            this.DeleteUser.Click += new System.EventHandler(this.DeleteUser_Click);
             // 
             // Form1
             // 

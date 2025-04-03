@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,32 @@ namespace MySqlTest
             }
 
             return result;
+        }
+
+        public bool DeleteUser(string Id)
+        {
+            MySqlConnection conn;
+            string MyConnectionString = "server=127.0.0.1;uid=root;pwd=vertrigo; database=mynewtest;";
+
+            try
+            {
+
+                conn = new MySqlConnection(MyConnectionString);
+                conn.Open();
+
+                string query = "DELETE FROM user WHERE ID = @ID;";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@ID", Id);
+
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+            
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Ошибка удаления" + ex.Message);
+                return false;
+            }
         }
     }
 }
