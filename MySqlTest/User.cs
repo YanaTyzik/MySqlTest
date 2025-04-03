@@ -8,7 +8,7 @@ namespace MySqlTest
 {
        public class User
     {
-        public string ID { get; set; }
+        public string Id { get; set; }
         public string Name {  get; set; }
         public string Surname { get; set; }
         public string Login { get; set; }
